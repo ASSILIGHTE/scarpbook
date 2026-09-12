@@ -15,6 +15,7 @@ import CursorTrail from './components/CursorTrail';
 import LightboxModal from './components/LightboxModal';
 
 export default function App() {
+  const [isBookUnlocked, setIsBookUnlocked] = useState(false);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const [activeModalPhoto, setActiveModalPhoto] = useState(null);
 
@@ -28,49 +29,73 @@ export default function App() {
     });
   };
 
+  const handleUnlockBook = () => {
+    setIsBookUnlocked(true);
+    setIsMusicPlaying(true);
+  };
+
   return (
     <div className="min-h-screen bg-[#FFF8F0] text-[#8B625B] relative font-sans selection:bg-[#F7D6DC] selection:text-[#8B625B]">
       {/* Interactive Cursor Trail */}
       <CursorTrail />
 
-      {/* Navigation Bar */}
-      <Navbar
-        onOpenMusic={() => setIsMusicPlaying(!isMusicPlaying)}
-        isMusicPlaying={isMusicPlaying}
-      />
+      {/* Welcome Screen Cover Gate (Full Overlay when locked) */}
+      {!isBookUnlocked && (
+        <CoverSection
+          isWelcomeGate={true}
+          onOpen={handleUnlockBook}
+        />
+      )}
 
-      {/* Main Sections */}
-      <main>
-        {/* Cover / Opening Section */}
-        <CoverSection onOpen={() => console.log('Book opened')} />
+      {/* Main Unlocked Scrapbook Content */}
+      {isBookUnlocked && (
+        <div className="animate-in fade-in duration-700">
+          {/* Navigation Bar */}
+          <Navbar
+            onOpenMusic={() => setIsMusicPlaying(!isMusicPlaying)}
+            isMusicPlaying={isMusicPlaying}
+          />
 
-        {/* Section 2: Memory Timeline ("Our Story") */}
-        <TimelineSection onPhotoClick={handleOpenGlobalModal} />
+          {/* Main Sections */}
+          <main>
+            {/* Cover Section Header */}
+            <CoverSection
+              isWelcomeGate={false}
+              onOpen={() => {
+                const target = document.querySelector('#timeline');
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            />
 
-        {/* Section 3: Photo Scrapbook Gallery ("Little Moments") */}
-        <GallerySection />
+            {/* Section 2: Memory Timeline ("Our Story") */}
+            <TimelineSection onPhotoClick={handleOpenGlobalModal} />
 
-        {/* Section 4: Polaroid Memory Cards */}
-        <PolaroidSection onPhotoClick={handleOpenGlobalModal} />
+            {/* Section 3: Photo Scrapbook Gallery ("Little Moments") */}
+            <GallerySection />
 
-        {/* Section 5: Love Notes (Sticky Notes) */}
-        <StickyNotesSection />
+            {/* Section 4: Polaroid Memory Cards */}
+            <PolaroidSection onPhotoClick={handleOpenGlobalModal} />
 
-        {/* Section 6: Favorite Memories */}
-        <FavoriteMemoriesSection onPhotoClick={handleOpenGlobalModal} />
+            {/* Section 5: Love Notes (Sticky Notes) */}
+            <StickyNotesSection />
 
-        {/* Section 7: Interactive Scrapbook Page Spread */}
-        <ScrapbookSpreadSection onPhotoClick={handleOpenGlobalModal} />
+            {/* Section 6: Favorite Memories */}
+            <FavoriteMemoriesSection onPhotoClick={handleOpenGlobalModal} />
 
-        {/* Section 8: Secret Letter */}
-        <SecretLetterSection />
+            {/* Section 7: Interactive Scrapbook Page Spread */}
+            <ScrapbookSpreadSection onPhotoClick={handleOpenGlobalModal} />
 
-        {/* Section 9: Memory Counter */}
-        <MemoryCounterSection />
-      </main>
+            {/* Section 8: Secret Letter */}
+            <SecretLetterSection />
 
-      {/* Footer */}
-      <Footer />
+            {/* Section 9: Memory Counter */}
+            <MemoryCounterSection />
+          </main>
+
+          {/* Footer */}
+          <Footer />
+        </div>
+      )}
 
       {/* Global Background Music Player */}
       <AudioPlayer
