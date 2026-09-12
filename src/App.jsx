@@ -32,6 +32,12 @@ export default function App() {
   const handleUnlockBook = () => {
     setIsBookUnlocked(true);
     setIsMusicPlaying(true);
+    setTimeout(() => {
+      const target = document.querySelector('#timeline');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 150);
   };
 
   return (
