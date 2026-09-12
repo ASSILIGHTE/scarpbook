@@ -40,7 +40,7 @@ export default function Navbar({ onOpenMusic, isMusicPlaying }) {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#0D0614]/90 backdrop-blur-md shadow-paper py-3 border-b border-[#9333EA]/30'
+          ? 'bg-[#FFF8F0]/90 backdrop-blur-md shadow-paper py-3 border-b border-[#D98C9A]/20'
           : 'bg-transparent py-5'
       }`}
     >
@@ -51,14 +51,14 @@ export default function Navbar({ onOpenMusic, isMusicPlaying }) {
           onClick={(e) => handleNavClick(e, '#cover')}
           className="flex items-center gap-2 group"
         >
-          <div className="w-8 h-8 rounded-full bg-[#9333EA]/40 flex items-center justify-center border border-[#E11D48]/50 group-hover:scale-110 transition-transform">
-            <Heart className="w-4 h-4 text-[#E11D48] fill-[#E11D48] animate-pulse-subtle" />
+          <div className="w-8 h-8 rounded-full bg-[#F7D6DC] flex items-center justify-center border border-[#D98C9A]/40 group-hover:scale-110 transition-transform">
+            <Heart className="w-4 h-4 text-[#C76575] fill-[#C76575] animate-pulse-subtle" />
           </div>
           <div>
-            <span className="font-handwriting text-2xl font-bold text-[#F3E8FF] tracking-wide block leading-none">
+            <span className="font-handwriting text-2xl font-bold text-[#8B625B] tracking-wide block leading-none">
               {coupleInfo.names}
             </span>
-            <span className="text-[10px] uppercase tracking-widest text-[#FB7185] font-semibold block">
+            <span className="text-[10px] uppercase tracking-widest text-[#D98C9A] font-semibold block">
               Digital Scrapbook
             </span>
           </div>
@@ -71,7 +71,7 @@ export default function Navbar({ onOpenMusic, isMusicPlaying }) {
               key={link.name}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-[#E9D5FF] hover:text-[#FB7185] font-medium text-sm transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#E11D48] hover:after:w-full after:transition-all"
+              className="text-[#8B625B] hover:text-[#C76575] font-medium text-sm transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#D98C9A] hover:after:w-full after:transition-all"
             >
               {link.name}
             </a>
@@ -80,8 +80,8 @@ export default function Navbar({ onOpenMusic, isMusicPlaying }) {
             onClick={onOpenMusic}
             className={`p-2 rounded-full border transition-all flex items-center gap-1.5 px-3 text-xs font-semibold ${
               isMusicPlaying
-                ? 'bg-[#E11D48] border-[#9333EA] text-white shadow-lg'
-                : 'bg-[#180B28]/80 border-[#9333EA]/40 text-[#E9D5FF] hover:bg-[#9333EA]/40'
+                ? 'bg-[#F7D6DC] border-[#C76575] text-[#C76575]'
+                : 'bg-white/60 border-[#D98C9A]/30 text-[#8B625B] hover:bg-[#F7D6DC]/40'
             }`}
           >
             <Music className={`w-3.5 h-3.5 ${isMusicPlaying ? 'animate-spin' : ''}`} style={{ animationDuration: '4s' }} />
@@ -94,14 +94,14 @@ export default function Navbar({ onOpenMusic, isMusicPlaying }) {
           <button
             onClick={onOpenMusic}
             className={`p-2 rounded-full text-xs font-semibold ${
-              isMusicPlaying ? 'bg-[#E11D48] text-white' : 'bg-[#180B28]/80 text-[#E9D5FF]'
+              isMusicPlaying ? 'bg-[#F7D6DC] text-[#C76575]' : 'bg-white/60 text-[#8B625B]'
             }`}
           >
             🎵
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg bg-[#9333EA]/30 text-[#F3E8FF] hover:bg-[#9333EA]/60 transition-colors focus:outline-none border border-[#E11D48]/30"
+            className="p-2 rounded-lg bg-[#F7D6DC]/50 text-[#8B625B] hover:bg-[#F7D6DC] transition-colors focus:outline-none"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -111,17 +111,17 @@ export default function Navbar({ onOpenMusic, isMusicPlaying }) {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#180B28] border-b border-[#9333EA]/40 px-6 py-6 space-y-4 shadow-paper-lg animate-in slide-in-from-top duration-300">
+        <div className="md:hidden bg-[#FFF8F0] border-b border-[#D98C9A]/30 px-6 py-6 space-y-4 shadow-paper-lg animate-in slide-in-from-top duration-300">
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-[#F3E8FF] hover:text-[#FB7185] font-handwriting text-2xl py-1 border-b border-[#9333EA]/30 flex items-center justify-between"
+                className="text-[#8B625B] hover:text-[#C76575] font-handwriting text-2xl py-1 border-b border-[#F7D6DC]/50 flex items-center justify-between"
               >
                 <span>{link.name}</span>
-                <span className="text-xs text-[#E11D48]">♡</span>
+                <span className="text-xs text-[#D98C9A]">♡</span>
               </a>
             ))}
           </div>

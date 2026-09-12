@@ -66,40 +66,40 @@ export default function MemoryCounterSection() {
       label: 'Foto Kenangan',
       value: `${counts.photos}+`,
       icon: Image,
-      color: 'bg-[#9333EA]/30 border-[#9333EA]/50',
-      textColor: 'text-[#C084FC]'
+      color: 'bg-[#F7D6DC]',
+      textColor: 'text-[#C76575]'
     },
     {
       label: 'Cerita Kenangan',
       value: `${counts.memories}+`,
       icon: Heart,
-      color: 'bg-[#E11D48]/30 border-[#E11D48]/50',
-      textColor: 'text-[#FB7185]'
+      color: 'bg-[#FEF3C7]',
+      textColor: 'text-[#B45309]'
     },
     {
       label: 'Hari Bersama',
       value: `${counts.days.toLocaleString()}+`,
       icon: Calendar,
-      color: 'bg-[#9333EA]/30 border-[#9333EA]/50',
-      textColor: 'text-[#C084FC]'
+      color: 'bg-[#D1FAE5]',
+      textColor: 'text-[#047857]'
     },
     {
       label: 'Special Moments',
       value: `${counts.moments}+`,
       icon: Sparkles,
-      color: 'bg-[#E11D48]/30 border-[#E11D48]/50',
-      textColor: 'text-[#FB7185]'
+      color: 'bg-[#E0F2FE]',
+      textColor: 'text-[#0369A1]'
     }
   ];
 
   return (
-    <section ref={sectionRef} className="py-16 px-4 bg-[#0A0410] relative overflow-hidden border-y border-[#9333EA]/30">
+    <section ref={sectionRef} className="py-16 px-4 bg-[#FDFBF7] relative overflow-hidden border-y border-[#F7D6DC]/50">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className="font-handwriting text-4xl sm:text-5xl font-bold text-[#F3E8FF] mb-2">
+          <h2 className="font-handwriting text-4xl sm:text-5xl font-bold text-[#8B625B] mb-2">
             How Many Memories Have We Made?
           </h2>
-          <p className="text-[#C084FC]/80 text-xs sm:text-sm font-semibold uppercase tracking-wider">
+          <p className="text-[#8B625B]/70 text-xs sm:text-sm font-semibold uppercase tracking-wider">
             Our Journey In Numbers ♡
           </p>
         </div>
@@ -111,15 +111,15 @@ export default function MemoryCounterSection() {
             return (
               <div
                 key={idx}
-                className="bg-[#180B28] rounded-2xl p-5 shadow-paper text-center border border-[#9333EA]/40 transform hover:-translate-y-1 transition-transform"
+                className="bg-white rounded-2xl p-5 shadow-paper text-center border border-gray-100 transform hover:-translate-y-1 transition-transform"
               >
-                <div className={`w-12 h-12 rounded-full ${stat.color} ${stat.textColor} border flex items-center justify-center mx-auto mb-3`}>
+                <div className={`w-12 h-12 rounded-full ${stat.color} ${stat.textColor} flex items-center justify-center mx-auto mb-3`}>
                   <Icon className="w-6 h-6" />
                 </div>
-                <div className="font-handwriting text-4xl sm:text-5xl font-bold text-[#F3E8FF] mb-1">
+                <div className="font-handwriting text-4xl sm:text-5xl font-bold text-[#8B625B] mb-1">
                   {stat.value}
                 </div>
-                <div className="text-xs text-[#C084FC] font-semibold uppercase tracking-wider">
+                <div className="text-xs text-[#8B625B]/80 font-semibold uppercase tracking-wider">
                   {stat.label}
                 </div>
               </div>

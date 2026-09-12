@@ -4,18 +4,18 @@
 
 @layer base {
   body {
-    background-color: #0D0614;
-    color: #F3E8FF;
+    background-color: #FFF8F0;
+    color: #8B625B;
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
 }
 
 /* Paper Grain Texture Overlay */
 .paper-texture {
-  background-image: radial-gradient(#9333EA 0.4px, transparent 0.4px), radial-gradient(#E11D48 0.4px, #0D0614 0.4px);
+  background-image: radial-gradient(#D98C9A 0.4px, transparent 0.4px), radial-gradient(#8B625B 0.4px, #FFF8F0 0.4px);
   background-size: 16px 16px;
   background-position: 0 0, 8px 8px;
-  opacity: 0.08;
+  opacity: 0.04;
   pointer-events: none;
 }
 
@@ -42,38 +42,38 @@
   );
 }
 
-/* Scrapbook Washi Tape Effect (Purple + Red + Black Palette) */
+/* Scrapbook Washi Tape Effect (Pastel Palette) */
 .washi-tape {
   position: absolute;
-  background: rgba(225, 29, 72, 0.8);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  border-left: 2px dashed rgba(244, 63, 94, 0.6);
-  border-right: 2px dashed rgba(244, 63, 94, 0.6);
-  backdrop-filter: blur(2px);
+  background: rgba(247, 214, 220, 0.75);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-left: 2px dashed rgba(217, 140, 154, 0.4);
+  border-right: 2px dashed rgba(217, 140, 154, 0.4);
+  backdrop-filter: blur(1px);
 }
 
 .washi-tape-gold {
   position: absolute;
-  background: rgba(168, 85, 247, 0.8);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  border-left: 2px dashed rgba(192, 132, 252, 0.6);
-  border-right: 2px dashed rgba(192, 132, 252, 0.6);
+  background: rgba(242, 215, 161, 0.8);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-left: 2px dashed rgba(184, 138, 68, 0.4);
+  border-right: 2px dashed rgba(184, 138, 68, 0.4);
 }
 
 .washi-tape-pink {
   position: absolute;
-  background: rgba(147, 51, 234, 0.85);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  border-left: 2px dashed rgba(192, 132, 252, 0.6);
-  border-right: 2px dashed rgba(192, 132, 252, 0.6);
+  background: rgba(247, 197, 209, 0.8);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-left: 2px dashed rgba(217, 140, 154, 0.4);
+  border-right: 2px dashed rgba(217, 140, 154, 0.4);
 }
 
 .washi-tape-brown {
   position: absolute;
-  background: rgba(190, 18, 60, 0.85);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  border-left: 2px dashed rgba(251, 113, 133, 0.6);
-  border-right: 2px dashed rgba(251, 113, 133, 0.6);
+  background: rgba(214, 185, 172, 0.75);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-left: 2px dashed rgba(139, 98, 91, 0.4);
+  border-right: 2px dashed rgba(139, 98, 91, 0.4);
 }
 
 /* Custom Scrollbar */
@@ -82,22 +82,22 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0D0614;
+  background: #FFF8F0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E11D48;
+  background: #D98C9A;
   border-radius: 5px;
-  border: 2px solid #0D0614;
+  border: 2px solid #FFF8F0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9333EA;
+  background: #C76575;
 }
 
 /* Stamp Border Effect */
 .stamp-border {
-  border: 3px dashed #E11D48;
+  border: 3px dashed #D98C9A;
   border-radius: 4px;
 }
 
