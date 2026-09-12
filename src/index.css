@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0D0614;
+    color: #F3E8FF;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Paper Grain Texture Overlay */
+.paper-texture {
+  background-image: radial-gradient(#9333EA 0.4px, transparent 0.4px), radial-gradient(#E11D48 0.4px, #0D0614 0.4px);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* Torn Paper Border Generator */
+.torn-paper-bottom {
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% 90%,
+    98% 95%, 95% 88%, 92% 96%, 88% 90%, 85% 97%, 82% 91%,
+    78% 96%, 75% 89%, 72% 95%, 68% 90%, 65% 97%, 62% 89%,
+    58% 96%, 55% 90%, 52% 98%, 48% 91%, 45% 96%, 42% 89%,
+    38% 97%, 35% 91%, 32% 96%, 28% 89%, 25% 97%, 22% 90%,
+    18% 96%, 15% 91%, 12% 97%, 8% 90%, 5% 96%, 0% 90%
+  );
+}
+
+.torn-paper-top {
+  clip-path: polygon(
+    0% 10%, 5% 4%, 8% 10%, 12% 3%, 15% 9%, 18% 4%,
+    22% 10%, 25% 3%, 28% 11%, 32% 4%, 35% 9%, 38% 3%,
+    42% 11%, 45% 4%, 48% 9%, 52% 2%, 55% 10%, 58% 4%,
+    62% 11%, 65% 3%, 68% 10%, 72% 5%, 75% 11%, 78% 4%,
+    82% 9%, 85% 3%, 88% 10%, 92% 4%, 95% 12%, 98% 5%,
+    100% 10%, 100% 100%, 0% 100%
+  );
+}
+
+/* Scrapbook Washi Tape Effect (Purple + Red + Black Palette) */
+.washi-tape {
+  position: absolute;
+  background: rgba(225, 29, 72, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  border-left: 2px dashed rgba(244, 63, 94, 0.6);
+  border-right: 2px dashed rgba(244, 63, 94, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+.washi-tape-gold {
+  position: absolute;
+  background: rgba(168, 85, 247, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  border-left: 2px dashed rgba(192, 132, 252, 0.6);
+  border-right: 2px dashed rgba(192, 132, 252, 0.6);
+}
+
+.washi-tape-pink {
+  position: absolute;
+  background: rgba(147, 51, 234, 0.85);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  border-left: 2px dashed rgba(192, 132, 252, 0.6);
+  border-right: 2px dashed rgba(192, 132, 252, 0.6);
+}
+
+.washi-tape-brown {
+  position: absolute;
+  background: rgba(190, 18, 60, 0.85);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  border-left: 2px dashed rgba(251, 113, 133, 0.6);
+  border-right: 2px dashed rgba(251, 113, 133, 0.6);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D0614;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E11D48;
+  border-radius: 5px;
+  border: 2px solid #0D0614;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9333EA;
+}
+
+/* Stamp Border Effect */
+.stamp-border {
+  border: 3px dashed #E11D48;
+  border-radius: 4px;
+}
+
+/* Smooth book page perspective */
+.perspective-1000 {
+  perspective: 1200px;
+}
